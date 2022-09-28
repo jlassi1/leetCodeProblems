@@ -4,21 +4,12 @@ class Solution:
             return False
         elif  x < 10:
             return True
-        y = str(x)
         xList = []
-        for i in y:
+        for i in str(x):
             xList.append(i)
-        if len(xList) %2 == 0:
-            mid = len(xList)  // 2
-            inv = xList[mid:]
-            if xList[:mid] == inv[::-1]:
-                return True
-            else:
-                return False
+        inv = xList[::-1]
+        if xList == inv:
+            return True
         else:
-            mid = len(xList)  // 2
-            inv = xList[mid+1:]
-            if xList[:mid] == inv[::-1]:
-                return True
-            else:
-                return False
+            return False
+       
