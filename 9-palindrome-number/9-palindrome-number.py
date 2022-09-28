@@ -4,12 +4,9 @@ class Solution:
             return False
         elif  x < 10:
             return True
-        xList = []
-        for i in str(x):
-            xList.append(i)
-        inv = xList[::-1]
-        if xList == inv:
+        if str(x) == str(x)[::-1]:
             return True
         else:
             return False
+   
        
