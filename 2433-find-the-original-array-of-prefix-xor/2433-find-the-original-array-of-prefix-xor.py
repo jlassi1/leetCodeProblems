@@ -2,10 +2,13 @@ class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
         if len(pref)<2:
             return pref
-        new_pref = [pref[0]] 
-        for idx in range(1, len(pref)):
-            new_pref.append(pref[idx] ^ pref[idx-1])
-     
+        new_pref = [0] * len(pref)
+
+        for idx, num in enumerate(pref):
+            if idx != 0:
+                new_pref[idx] = num ^  pref[idx-1] 
+            else:
+                new_pref[idx] = num      
         return new_pref
 
 
